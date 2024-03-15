@@ -1,0 +1,17 @@
+// Theme: Default
+// =============================================================================
+// App
+@use 'front/srcc/scss/app/index' as *;
+
+// Properties
+@use 'front/srcc/scss/themes/defaults/_app.css';
+@use 'front/srcc/scss/themes/defaults/_base.css';
+@use 'front/srcc/scss/themes/defaults/_content.css';
+@use 'front/srcc/scss/themes/defaults/_cover.css';
+@use 'front/srcc/scss/themes/defaults/_navbar.css';
+@use 'front/srcc/scss/themes/defaults/_plugin-copy-code.css';
+@use 'front/srcc/scss/themes/defaults/_plugin-docsify-tabs.css';
+@use 'front/srcc/scss/themes/defaults/_plugin-pagination.css';
+@use 'front/srcc/scss/themes/defaults/_plugin-search.css';
+@use 'front/srcc/scss/themes/defaults/_plugin-zoom-image.css';
+@use 'front/srcc/scss/themes/defaults/_sidebar.css';
