@@ -16,14 +16,25 @@
       content="_EWJaM8G6xwMtEqemO4yN8WqSU2CaKVi3jTj0gLg48E"
     />
     <title>
-      docsify-themeable - A delightfully simple theme system for docsify.js
+      Terrence的个人的小站
     </title>
-
     <link
-      rel="stylesheet"
-      data-style-group="themeable"
-      media="(prefers-color-scheme: light)"
-      href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
+            rel="stylesheet"
+            data-style-group="themeable"
+            href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-defaults.css"
+            disabled
+    />
+    <link
+            rel="stylesheet"
+            data-style-group="themeable"
+            media="(prefers-color-scheme: dark)"
+            href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple-dark.css"
+    />
+    <link
+            rel="stylesheet"
+            data-style-group="themeable"
+            media="(prefers-color-scheme: light)"
+            href="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/css/theme-simple.css"
     />
     <link rel="stylesheet" href="assets/css/main.css" />
     <!-- Global site tag (gtag.js) - Google Analytics -->
@@ -103,24 +114,39 @@
     </script>
     <script src="assets/js/main.js"></script>
 
+
+    <script src="//unpkg.com/docsify/lib/docsify.min.js"></script>
+    <!--Java代码高亮-->
+    <script src="//unpkg.com/prismjs/components/prism-java.js"></script>
+    <!--全文搜索,直接用官方提供的无法生效-->
+    <script src="https://cdn.bootcss.com/docsify/4.5.9/plugins/search.min.js"></script>
+    <!--谷歌统计
+    <script src="//unpkg.com/docsify" data-ga="UA-138586553-1"></script>
+    <script src="//unpkg.com/docsify/lib/plugins/ga.js"></script>
+    -->
+    <!-- 复制到剪贴板 -->
+    <script src="//unpkg.com/docsify-copy-code"></script>
+    <!-- 图片缩放 -->
+    <script src="//unpkg.com/docsify/lib/plugins/zoom-image.js"></script>
+
     <!-- Docsify "develop" branch preview files-->
     <!-- <script src="https://docsify-preview.vercel.app/lib/docsify.min.js"></script> -->
     <!-- <script src="https://docsify-preview.vercel.app/lib/plugins/external-script.min.js"></script> -->
     <!-- <script src="https://docsify-preview.vercel.app/lib/plugins/search.min.js"></script> -->
     <!-- <script src="https://docsify-preview.vercel.app/lib/plugins/zoom-image.min.js"></script> -->
 
-    <!-- Docsify current release  -->
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>
+<!--    &lt;!&ndash; Docsify current release  &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/docsify.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/external-script.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/search.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/docsify@4/lib/plugins/zoom-image.min.js"></script>-->
 
-    <!-- Plugins -->
-    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-ethicalads@1"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>
+<!--    &lt;!&ndash; Plugins &ndash;&gt;-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/docsify-themeable@0/dist/js/docsify-themeable.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/docsify-plugin-ethicalads@1"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/docsify-tabs@1/dist/docsify-tabs.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/docsify-copy-code@2/dist/docsify-copy-code.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/docsify-pagination@2/dist/docsify-pagination.min.js"></script>-->
+<!--    <script src="https://cdn.jsdelivr.net/npm/prismjs@1/components/prism-bash.min.js"></script>-->
   </body>
 </html>
