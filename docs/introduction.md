@@ -11,6 +11,8 @@
 - [JVM设置参数说明分析](src/studys/003JVM设置参数说明分析.md)
 - [LeetCode算法技巧](src/studys/004LeetCode算法技巧.md)
 - [谈谈Java中的伪共享问题](src/studys/006谈谈伪共享.md)
+- [生产环境问题定位方法论](src/studys/007生产环境问题定位方法论.md)
+- [软件开发学习大全](src/studys/008软件开发学习大全.md)
 
 ## 经验
 - [SQL查询导致的OOM事故](src/experience/001一次线上OOM经验.md)
