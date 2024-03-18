@@ -33,4 +33,6 @@ def parseFileAndReplace(fileName):
 
 
 if __name__ == '__main__':
-    parseFileAndReplace("谈谈伪共享.md")
+    parseFileAndReplace("NoSuchMethodError 常见原因及解决方法.md")
+    parseFileAndReplace("OutOfMemoryError 常见原因及解决方法.md")
+    parseFileAndReplace("StackOverFlowError 常见原因及解决方法.md")

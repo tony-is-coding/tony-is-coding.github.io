@@ -14,6 +14,11 @@
 - [生产环境问题定位方法论](src/studys/007生产环境问题定位方法论.md)
 - [软件开发学习大全](src/studys/008软件开发学习大全.md)
 - [LockSupport详细说明](src/studys/009LockSupport详细说明.md)
+- [数据库优化的结构化思维](src/studys/010数据库优化的结构化思维.md)
+- [NoSuchMethodError常见原因及解决方法](src/studys/011NoSuchMethodError%20常见原因及解决方法.md)
+- [OutOfMemoryError常见原因及解决方法](src/studys/012OutOfMemoryError%20常见原因及解决方法.md)
+- [StackOverFlowError常见原因及解决方法](src/studys/013StackOverFlowError%20常见原因及解决方法.md)
+
 
 ## 经验
 - [SQL查询导致的OOM事故](src/experience/001一次线上OOM经验.md)
