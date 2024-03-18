@@ -10,6 +10,7 @@
 - [并发系列之线程、线程池](src/studys/005并发系列之线程、线程池.md)
 - [JVM设置参数说明分析](src/studys/003JVM设置参数说明分析.md)
 - [LeetCode算法技巧](src/studys/004LeetCode算法技巧.md)
+- [谈谈Java中的伪共享问题](src/studys/006谈谈伪共享.md)
 
 ## 经验
 - [SQL查询导致的OOM事故](src/experience/001一次线上OOM经验.md)
