@@ -3,7 +3,7 @@
 ## 运行时抛出 NoSuchMethodError 的根本原因是什么？
 在实际生产系统中，我们主要关注运行时抛出的 NoSuchMethodError 错误，该错误轻则导致程序异常终止，严重时甚至会产生不可预知的程序结果，比如支付服务执行异常，实际支付已完成，却向用户返回支付失败。
 运行时抛出 NoSuchMethodError 错误的根本原因就是： **应用程序直接或间接依赖了同一个类的多个版本，并且在运行时执行了缺少方法的版本。** 如下图所示：
-![image.png](NoSuchMethodError 常见原因及解决方法/img_1.png=)](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/image/NoSuchMethodError%E7%94%9F%E6%88%90%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
+![image.png](NoSuchMethodError常见原因及解决方法/img_1.png)
 因此，核心问题就转化为： **同一类为什么会有多个版本？哪个版本的类最终会被执行？**
 ## 为什么同一个 Class 会出现多个版本？
 导致 Java Class 出现多版本的原因，可以归纳为以下几类：
@@ -15,7 +15,7 @@
 - **同一个 Class 出现在不同的 Jar 包中。** 该问题常见于代码拷贝场景，比如基于开源版本定制了一些功能，使用了新的 Maven 坐标打包发布，此时 Maven 仲裁机制失效（非常隐蔽，难以排查）。由于 JVM 类加载器对于同一个类只会加载一次，最终加载的类实现受到 Jar 包依赖的路径、类声明的先后顺序或文件加载顺序等因素的影响，很可能出现不同机器加载的类实现不一致。
 ## 哪个版本的 Class 最终会被执行？
 影响 Class 最终是否被执行的关键因素有两个：Maven 依赖仲裁机制和 JVM 类加载机制，如下图所示：
-![image.png](NoSuchMethodError 常见原因及解决方法/img_2.png=)](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/image/NoSuchMethodError%E5%BD%B1%E5%93%8DClass%E6%89%A7%E8%A1%8C%E7%9A%84%E4%B8%A4%E4%B8%AA%E5%9B%A0%E7%B4%A0.png)
+![image.png](NoSuchMethodError常见原因及解决方法/img_2.png)
 **首先，**[Maven 依赖仲裁机制](https://maven.apache.org/guides/introduction/introduction-to-dependency-mechanism.html)** 决定了打包的优先级，** 仲裁优先级“从高到低”如下所述：
 
 1. 优先按照依赖管理 [dependencyManagement] 元素中指定的版本进行仲裁；

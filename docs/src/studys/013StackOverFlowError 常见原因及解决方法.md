@@ -1,12 +1,6 @@
-每一个 JVM 线程都拥有一个私有的 JVM 线程栈，用于存放当前线程的 JVM 栈帧（包括被调用函数的参数、局部变量和返回地址等）。如果某个线程的线程栈空间被耗尽，没有足够资源分配给新创建的栈帧，就会抛出 java.lang.StackOverflowError 错误。本文总结了 StackOverflowError 常见原因及其解决方法，如有遗漏或错误，欢迎补充指正。
+> 每一个 JVM 线程都拥有一个私有的 JVM 线程栈，用于存放当前线程的 JVM 栈帧（包括被调用函数的参数、局部变量和返回地址等）。如果某个线程的线程栈空间被耗尽，没有足够资源分配给新创建的栈帧，就会抛出 java.lang.StackOverflowError 错误。本文总结了 StackOverflowError 常见原因及其解决方法，如有遗漏或错误，欢迎补充指正。
 ## 目录
 
-- [线程栈是如何运行的？](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/%E7%B3%BB%E7%BB%9F%E7%A8%B3%E5%AE%9A%E6%80%A7%E2%80%94%E2%80%94StackOverFlowError%E5%B8%B8%E8%A7%81%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md#%E7%BA%BF%E7%A8%8B%E6%A0%88%E6%98%AF%E5%A6%82%E4%BD%95%E8%BF%90%E8%A1%8C%E7%9A%84)
-- [StackOverFlowError 是如何产生的？](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/%E7%B3%BB%E7%BB%9F%E7%A8%B3%E5%AE%9A%E6%80%A7%E2%80%94%E2%80%94StackOverFlowError%E5%B8%B8%E8%A7%81%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md#stackoverflowerror-%E6%98%AF%E5%A6%82%E4%BD%95%E4%BA%A7%E7%94%9F%E7%9A%84)
-- [如何解决 StackOverFlowError？](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/%E7%B3%BB%E7%BB%9F%E7%A8%B3%E5%AE%9A%E6%80%A7%E2%80%94%E2%80%94StackOverFlowError%E5%B8%B8%E8%A7%81%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md#%E5%A6%82%E4%BD%95%E8%A7%A3%E5%86%B3-stackoverflowerror)
-- [推荐工具&产品](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/%E7%B3%BB%E7%BB%9F%E7%A8%B3%E5%AE%9A%E6%80%A7%E2%80%94%E2%80%94StackOverFlowError%E5%B8%B8%E8%A7%81%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md#%E6%8E%A8%E8%8D%90%E5%B7%A5%E5%85%B7%E4%BA%A7%E5%93%81)
-- [参考文章](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/%E7%B3%BB%E7%BB%9F%E7%A8%B3%E5%AE%9A%E6%80%A7%E2%80%94%E2%80%94StackOverFlowError%E5%B8%B8%E8%A7%81%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md#%E5%8F%82%E8%80%83%E6%96%87%E7%AB%A0)
-- [加入我们](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/%E7%B3%BB%E7%BB%9F%E7%A8%B3%E5%AE%9A%E6%80%A7%E2%80%94%E2%80%94StackOverFlowError%E5%B8%B8%E8%A7%81%E5%8E%9F%E5%9B%A0%E5%8F%8A%E8%A7%A3%E5%86%B3%E6%96%B9%E6%B3%95.md#%E5%8A%A0%E5%85%A5%E6%88%91%E4%BB%AC)
 ## 线程栈是如何运行的？
 首先给出一个简单的程序调用代码示例，如下所示：
 ```java
@@ -28,8 +22,7 @@ public class SimpleExample {
 }
 ```
 当 main() 方法被调用后，执行线程按照代码执行顺序，将它正在执行的方法、基本数据类型、对象指针和返回值包装在栈帧中，逐一压入其私有的调用栈，整体执行过程如下图所示：
-![image.png](StackOverFlowError 常见原因及解决方法/img_1.png=)](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/image/StackOverFlowError%E6%A0%88%E5%B8%A7%E5%85%A5%E6%A0%88%E8%BF%87%E7%A8%8B.png)
-
+![image.png](StackOverFlowError常见原因及解决方法/img_1.png)
 1. 首先，程序启动后，main() 方法入栈。
 2. 然后，a() 方法入栈，变量 x 被声明为 int 类型，初始化赋值为 0。注意，无论是 x 还是 0 都被包含在栈帧中。
 3. 接着，b() 方法入栈，创建了一个 Car 对象，并被赋给变量 y。请注意，实际的 Car 对象是在 Java 堆内存中创建的，而不是线程栈中，只有 Car 对象的引用以及变量 y 被包含在栈帧里。
@@ -62,7 +55,8 @@ Exception in thread "main" java.lang.StackOverflowError
       at StackOverflowErrorExample.a(StackOverflowErrorExample.java:10)
       at StackOverflowErrorExample.a(StackOverflowErrorExample.java:10)
 ```
-![image.png](StackOverFlowError 常见原因及解决方法/img_2.png=)](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/image/StackOverFlowError%E6%97%A0%E9%99%90%E9%80%92%E5%BD%92%E6%A0%88%E6%BA%A2%E5%87%BA.png)
+![image.png](StackOverFlowError常见原因及解决方法/img_2.png)
+
 ## 如何解决 StackOverFlowError？
 引发 StackOverFlowError 的常见原因有以下几种：
 

@@ -1,6 +1,6 @@
 当 JVM 内存严重不足时，就会抛出 java.lang.OutOfMemoryError 错误。本文总结了常见的 OOM 原因及其解决方法，如下图所示。如有遗漏或错误，欢迎补充指正
-![image.png](OutOfMemoryError 常见原因及解决方法/img_1.png3)](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/image/Java%E5%86%85%E5%AD%98%E6%A8%A1%E5%9E%8B&OOM%E9%94%99%E8%AF%AF.png)
-如果对 JVM 内存模型和垃圾回收机制不熟悉，推荐阅读 [《咱们从头到尾说一次 Java 垃圾回收》](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/gc/%E5%92%B1%E4%BB%AC%E4%BB%8E%E5%A4%B4%E5%88%B0%E5%B0%BE%E8%AF%B4%E4%B8%80%E6%AC%A1%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6.md)。
+![image.png](OutOfMemoryError常见原因及解决方法/img_1.png)
+如果对 JVM 内存模型和垃圾回收机制不熟悉，推荐阅读 [《咱们从头到尾说一次 Java 垃圾回收》](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/gc/%E5%92%B1%E4%BB%AC%E4%BB%8E%E5%A4%B4%E5%88%B0%E5%B0%BE%E8%AF%B4%E4%B8%80%E6%AC%A1%E5%9E%83%E5%9C%BE%E5%9B%9E%E6%94%B6.md)
 ## 1. Java heap space
 当堆内存（Heap Space）没有足够空间存放新创建的对象时，就会抛出 java.lang.OutOfMemoryError: Java heap space 错误（根据实际生产经验，可以对程序日志中的 OutOfMemoryError 配置关键字告警，一经发现，立即处理）。
 ### 原因分析
@@ -86,7 +86,8 @@ ulimit -a .... 省略部分内容 ..... max user processes              (-u) 163
 ## 7. Kill process or sacrifice child
 有一种内核作业（Kernel Job）名为 Out of Memory Killer，它会在可用内存极低的情况下“杀死”（kill）某些进程。OOM Killer 会对所有进程进行打分，然后将评分较高的进程“杀死”，具体的评分规则可以参考 [Surviving the Linux OOM Killer](https://dev.to/rrampage/surviving-the-linux-oom-killer-2ki9)。
 不同于其他的 OOM 错误，Kill process or sacrifice child 错误不是由 JVM 层面触发的，而是由操作系统层面触发的。当系统空闲内存突然大幅被释放，有较大概率触发了 OOM Killer 杀掉了某些进程。
-![image.png](OutOfMemoryError 常见原因及解决方法/img_2.png=)](https://github.com/StabilityMan/StabilityGuide/blob/master/docs/diagnosis/jvm/exception/image/OOM_Killer%E7%A4%BA%E6%84%8F%E5%9B%BE.png)
+![image.png](OutOfMemoryError常见原因及解决方法/img_2.png)
+
 ### 原因分析
 默认情况下，Linux 内核允许进程申请的内存总量大于系统可用内存，通过这种“错峰复用”的方式可以更有效的利用系统资源。
 然而，这种方式也会无可避免地带来一定的“超卖”风险。例如某些进程持续占用系统内存，然后导致其他进程没有可用内存。此时，系统将自动激活 OOM Killer，寻找评分高的进程，并将其“杀死”，释放内存资源。
