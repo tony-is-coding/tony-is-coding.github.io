@@ -23,6 +23,7 @@
 ## 经验
 - [SQL查询导致的OOM事故](src/experience/001一次线上OOM经验.md)
 - [缓存雪崩+JVM参数不合理导致的频繁YGC异常](src/experience/002缓存雪崩及JVM参数不合理导致频繁YGC异常.md)
+- [不合理日志解析组件导致StackOverflow](src/experience/003不合理日志解析组件导致StackOverflow.md)
 
 ## 随笔
 
