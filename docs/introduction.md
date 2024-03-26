@@ -7,17 +7,18 @@
 
 
 ## 技术总结
-- [并发系列之线程、线程池](src/studys/005并发系列之线程、线程池.md)
-- [JVM设置参数说明分析](src/studys/003JVM设置参数说明分析.md)
-- [LeetCode算法技巧](src/studys/004LeetCode算法技巧.md)
-- [谈谈Java中的伪共享问题](src/studys/006谈谈伪共享.md)
-- [生产环境问题定位方法论](src/studys/007生产环境问题定位方法论.md)
-- [软件开发学习大全](src/studys/008软件开发学习大全.md)
-- [LockSupport详细说明](src/studys/009LockSupport详细说明.md)
-- [数据库优化的结构化思维](src/studys/010数据库优化的结构化思维.md)
-- [NoSuchMethodError常见原因及解决方法](src/studys/011NoSuchMethodError%20常见原因及解决方法.md)
-- [OutOfMemoryError常见原因及解决方法](src/studys/012OutOfMemoryError%20常见原因及解决方法.md)
-- [StackOverFlowError常见原因及解决方法](src/studys/013StackOverFlowError%20常见原因及解决方法.md)
+- [001并发系列之线程、线程池](src/studys/005并发系列之线程、线程池.md)
+- [002JVM设置参数说明分析](src/studys/003JVM设置参数说明分析.md)
+- [003LeetCode算法技巧](src/studys/004LeetCode算法技巧.md)
+- [004谈谈Java中的伪共享问题](src/studys/006谈谈伪共享.md)
+- [005生产环境问题定位方法论](src/studys/007生产环境问题定位方法论.md)
+- [006软件开发学习大全](src/studys/008软件开发学习大全.md)
+- [007LockSupport详细说明](src/studys/009LockSupport详细说明.md)
+- [008数据库优化的结构化思维](src/studys/010数据库优化的结构化思维.md)
+- [009NoSuchMethodError常见原因及解决方法](src/studys/011NoSuchMethodError%20常见原因及解决方法.md)
+- [010OutOfMemoryError常见原因及解决方法](src/studys/012OutOfMemoryError%20常见原因及解决方法.md)
+- [011StackOverFlowError常见原因及解决方法](src/studys/013StackOverFlowError%20常见原因及解决方法.md)
+- [012从设计角度学习AQS](src/studys/014从设计角度学习AQS.md)
 
 
 ## 经验
