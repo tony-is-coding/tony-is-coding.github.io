@@ -39,3 +39,6 @@
 - [数据结构](src/interivews/c-2数据结构.md)
 - [算法](src/interivews/c-3算法.md)
 - [操作系统](src/interivews/c-4操作系统.md)
+
+### 日更
+- [日更](src/posting/index.md)
