@@ -33,6 +33,4 @@ def parseFileAndReplace(fileName):
 
 
 if __name__ == '__main__':
-    parseFileAndReplace("NoSuchMethodError 常见原因及解决方法.md")
-    parseFileAndReplace("OutOfMemoryError 常见原因及解决方法.md")
-    parseFileAndReplace("StackOverFlowError 常见原因及解决方法.md")
+    parseFileAndReplace("从设计角度学习AQS.md")
