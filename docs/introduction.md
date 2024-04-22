@@ -1,9 +1,13 @@
 
 ## 项目
 
+
 ## 源码
 ### Spring 
 - [一文纵览-Spring生命周期](src/sourcecode/Spring生命周期.md)
+
+### AQS
+[从设计角度学习AQS](src/sourcecode/从设计角度学习AQS.md)
 
 
 ## 技术总结
@@ -26,19 +30,6 @@
 
 ## 随笔
 
-
-## 八股
-### Java语言
-- [Java基础](src/interivews/b-1面试题总结-Java基础.md)
-- [Java集合](src/interivews/b-2Java集合.md)
-- [Java多线程](src/interivews/b-3Java多线程.md)
-- [Java虚拟机](src/interivews/b-4jvm.md)
-
-### 计算机基础
-- [计算机网络](src/interivews/c-1计算机网络.md)
-- [数据结构](src/interivews/c-2数据结构.md)
-- [算法](src/interivews/c-3算法.md)
-- [操作系统](src/interivews/c-4操作系统.md)
 
 ### 日更
 - [日更](src/posting/index.md)
