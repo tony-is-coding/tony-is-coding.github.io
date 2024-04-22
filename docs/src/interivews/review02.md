@@ -177,7 +177,7 @@ Netty 被广泛应用于各种网络应用场景，包括：
 ##### 4. Netty 核心组件有哪些？分别有什么作用？
 Netty 的核心组件包括：
 - **Channel**：表示一个网络通道，可以是服务器端或客户端的网络连接。
-- **ChannelPipeline**：处理 Channel 事件的处理器链，负责事件的过滤和处理。
+- **ChannelPipeline**：处理 Channel 事件的处理器链，负责事件的过滤和处理。    
 - **ChannelHandler**：定义了具体的事件处理逻辑。
 - **EventLoop**：负责 I/O 操作和事件的触发，是 Netty 的核心 I/O 处理组件。
 - **ByteBuf**：字节容器，用于网络数据的读写操作。
