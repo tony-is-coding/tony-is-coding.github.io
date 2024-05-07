@@ -85,6 +85,9 @@ SpringWebMVC 是建立在SpringFramework上的一套全功能的WebMVC框架
 - @ConditionalOnProperty
 
 
+##### 11. Spring 为什么需要使用三级缓存来解决循环依赖, 二级不行么?
+首先说结论: 二级可以, 但是不符合Spring的设计
+- 因为Spring
 
 ### Spring Boot
 ##### 1. Spring Boot 的自动配置是如何工作的？
